@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.google.core.web.config.ExceptionConfiguration,\
   com.google.core.web.config.SwaggerConfiguration
 
 
