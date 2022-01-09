@@ -23,7 +23,7 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 @EnableResourceServer
 @RequiredArgsConstructor
 @EnableAutoConfiguration(exclude = UserDetailsServiceAutoConfiguration.class)
-public class ElAdminResourceServerConfig extends ResourceServerConfigurerAdapter {
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	private final IgnoreUrlPropsConfiguration ignoreUrlPropsConfig;
 

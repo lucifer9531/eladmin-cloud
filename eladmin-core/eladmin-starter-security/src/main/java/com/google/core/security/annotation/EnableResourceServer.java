@@ -1,6 +1,6 @@
 package com.google.core.security.annotation;
 
-import com.google.core.security.config.ElAdminResourceServerConfig;
+import com.google.core.security.config.ResourceServerConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -12,6 +12,6 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(ElAdminResourceServerConfig.class)
-public @interface EnableElAdminResourceServer {
+@Import(ResourceServerConfig.class)
+public @interface EnableResourceServer {
 }
