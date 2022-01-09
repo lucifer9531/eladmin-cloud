@@ -48,5 +48,4 @@ public class IgnoreUrlPropsConfiguration {
 	public void initIgnoreSecurity() {
 		Collections.addAll(ignoreSecurity, SECURITY_ENDPOINTS);
 	}
-
 }
