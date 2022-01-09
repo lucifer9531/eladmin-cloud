@@ -17,6 +17,8 @@
         <module>eladmin-starter-web</module>
         <module>eladmin-starter-cloud</module>
         <module>eladmin-starter-feign</module>
+        <module>eladmin-starter-redis</module>
+        <module>eladmin-starter-auth</module>
     </modules>
 
     <properties>
