@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.google.core.security.config.IgnoreUrlPropsConfiguration,\
+  com.google.core.security.service.PermissionService,\
+  com.google.core.security.config.MateSecurityConfig
+
+
+
+

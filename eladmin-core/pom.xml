@@ -19,6 +19,7 @@
         <module>eladmin-starter-feign</module>
         <module>eladmin-starter-redis</module>
         <module>eladmin-starter-auth</module>
+        <module>eladmin-starter-security</module>
     </modules>
 
     <properties>

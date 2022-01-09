@@ -1,7 +1,7 @@
 package com.google.core.common.api;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.google.core.common.constant.ElAdminConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -37,6 +37,10 @@ public class Result<T> implements Serializable {
         this.time = System.currentTimeMillis();
     }
 
+    private Result(IResultCode resultCode) {
+        this(resultCode, null, resultCode.getMsg());
+    }
+
     private Result(IResultCode resultCode, String msg) {
         this(resultCode, null, msg);
     }
@@ -56,6 +60,17 @@ public class Result<T> implements Serializable {
         this.time = System.currentTimeMillis();
     }
 
+    /**
+     * 返回状态码
+     *
+     * @param resultCode 状态码
+     * @param <T>        泛型标识
+     * @return ApiResult
+     */
+    public static <T> Result<T> success(IResultCode resultCode) {
+        return new Result<>(resultCode);
+    }
+
     public static <T> Result<T> success(String msg) {
         return new Result<>(ResultCode.SUCCESS, msg);
     }
@@ -64,6 +79,17 @@ public class Result<T> implements Serializable {
         return new Result<>(resultCode, msg);
     }
 
+    public static <T> Result<T> data(T data) {
+        return data(data, ElAdminConstant.DEFAULT_SUCCESS_MESSAGE);
+    }
+
+    public static <T> Result<T> data(T data, String msg) {
+        return data(ResultCode.SUCCESS.code, data, msg);
+    }
+
+    public static <T> Result<T> data(int code, T data, String msg) {
+        return new Result<>(code, data, data == null ? ElAdminConstant.DEFAULT_NULL_MESSAGE : msg);
+    }
 
     public static <T> Result<T> fail() {
         return new Result<>(ResultCode.FAILURE, ResultCode.FAILURE.getMsg());
@@ -77,7 +103,15 @@ public class Result<T> implements Serializable {
         return new Result<>(code, null, msg);
     }
 
+    public static <T> Result<T> fail(IResultCode resultCode) {
+        return new Result<>(resultCode);
+    }
+
     public static <T> Result<T> fail(IResultCode resultCode, String msg) {
         return new Result<>(resultCode, msg);
+    }
+
+    public static <T> Result<T> condition(boolean flag) {
+        return flag ? success(ElAdminConstant.DEFAULT_SUCCESS_MESSAGE) : fail(ElAdminConstant.DEFAULT_FAIL_MESSAGE);
     }
 }

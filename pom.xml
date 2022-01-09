@@ -11,6 +11,7 @@
     <modules>
         <module>eladmin-core</module>
         <module>eladmin-system</module>
+        <module>eladmin-uaa</module>
     </modules>
 
     <properties>
