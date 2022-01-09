@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>eladmin-cloud</artifactId>
+        <groupId>com.google</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>eladmin-core</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>eladmin-starter-common</module>
+        <module>eladmin-starter-database</module>
+        <module>eladmin-starter-web</module>
+        <module>eladmin-starter-cloud</module>
+        <module>eladmin-starter-feign</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <matecloud.core.version>4.2.8</matecloud.core.version>
+        <swagger.version>2.9.2</swagger.version>
+        <swagger.models.version>1.5.21</swagger.models.version>
+        <swagger.bootstrapui.version>1.9.4</swagger.bootstrapui.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>vip.mate</groupId>
+                <artifactId>mate-starter-dependencies</artifactId>
+                <version>${matecloud.core.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <!--当前环境-->
+                <spring.active>local</spring.active>
+                <config.server-addr>60.205.181.203:8848</config.server-addr>
+                <config.namespace></config.namespace>
+                <config.group>DEFAULT_GROUP</config.group>
+                <discovery.server-addr>60.205.181.203:8848</discovery.server-addr>
+                <sentinel.port>8719</sentinel.port>
+                <sentinel.dashboard>127.0.0.1:8088</sentinel.dashboard>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <spring.active>dev</spring.active>
+                <config.server-addr>127.0.0.1:8848</config.server-addr>
+                <config.namespace></config.namespace>
+                <config.group>DEFAULT_GROUP</config.group>
+                <discovery.server-addr>127.0.0.1:8848</discovery.server-addr>
+                <sentinel.port>8719</sentinel.port>
+                <sentinel.dashboard>127.0.0.1:8080</sentinel.dashboard>
+            </properties>
+            <!--            <activation>-->
+            <!--                <activeByDefault>true</activeByDefault>-->
+            <!--            </activation>-->
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <spring.active>test</spring.active>
+                <config.server-addr>172.26.85.32:8848</config.server-addr>
+                <config.namespace>568b8eaa-f25d-4f2a-8c87-83dcb4caa955</config.namespace>
+                <config.group>DEFAULT_GROUP</config.group>
+                <discovery.server-addr>172.26.85.32:8848</discovery.server-addr>
+                <sentinel.port>8719</sentinel.port>
+                <sentinel.dashboard>localhost:8080</sentinel.dashboard>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.active>prod</spring.active>
+                <config.server-addr>172.26.85.32:8848</config.server-addr>
+                <config.namespace>568b8eaa-f25d-4f2a-8c87-83dcb4caa955</config.namespace>
+                <config.group>DEFAULT_GROUP</config.group>
+                <discovery.server-addr>172.26.85.32:8848</discovery.server-addr>
+                <sentinel.port>8719</sentinel.port>
+                <sentinel.dashboard>localhost:8080</sentinel.dashboard>
+            </properties>
+        </profile>
+        <profile>
+            <id>docker</id>
+            <properties>
+                <spring.active>docker</spring.active>
+                <config.server-addr>172.30.0.48:8848</config.server-addr>
+                <config.namespace></config.namespace>
+                <config.group>DEFAULT_GROUP</config.group>
+                <discovery.server-addr>172.30.0.48:8848</discovery.server-addr>
+                <sentinel.port>8719</sentinel.port>
+                <sentinel.dashboard>172.30.0.80:8088</sentinel.dashboard>
+            </properties>
+            <!--            <activation>-->
+            <!--                <activeByDefault>true</activeByDefault>-->
+            <!--            </activation>-->
+        </profile>
+    </profiles>
+</project>

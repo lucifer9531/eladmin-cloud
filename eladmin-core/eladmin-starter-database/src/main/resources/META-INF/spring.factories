@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.google.core.database.config.MybatisPlusConfiguration,\
+  com.google.core.database.config.DruidConfiguration

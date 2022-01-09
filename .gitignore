@@ -1,0 +1,9 @@
+# Project exclude paths
+/eladmin-core/eladmin-starter-cloud/target/
+/eladmin-core/eladmin-starter-common/target/
+/eladmin-core/eladmin-starter-database/target/
+/eladmin-core/eladmin-starter-feign/target/
+/eladmin-system/target/
+
+.idea
+target

@@ -1,0 +1,10 @@
+server:
+  port: 11111
+spring:
+  application:
+    name: ${artifactId}
+  #数据源配置
+  datasource:
+    url: ${eladmin.datasource.url}
+    username: ${eladmin.datasource.username}
+    password: ${eladmin.datasource.password}
