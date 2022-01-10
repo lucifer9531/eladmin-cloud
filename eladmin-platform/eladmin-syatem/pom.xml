@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>eladmin-cloud</artifactId>
+        <artifactId>eladmin-platform</artifactId>
         <groupId>com.google</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eladmin-uaa</artifactId>
+    <artifactId>eladmin-syatem</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -24,11 +24,6 @@
         </dependency>
         <dependency>
             <groupId>com.google</groupId>
-            <artifactId>eladmin-starter-security</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google</groupId>
             <artifactId>eladmin-starter-cloud</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
@@ -36,14 +31,6 @@
             <groupId>com.google</groupId>
             <artifactId>eladmin-starter-web</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.whvcse</groupId>
-            <artifactId>easy-captcha</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.minidev</groupId>
-            <artifactId>json-smart</artifactId>
         </dependency>
     </dependencies>
 

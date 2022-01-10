@@ -10,8 +10,8 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>eladmin-core</module>
-        <module>eladmin-system</module>
         <module>eladmin-uaa</module>
+        <module>eladmin-platform</module>
     </modules>
 
     <properties>
