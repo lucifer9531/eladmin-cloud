@@ -72,11 +72,11 @@ public class Oauth2Constant {
 	 */
 	public static final String IMPLICIT = "implicit";
 
-	public static final String SIGN_KEY = "MATE";
+	public static final String SIGN_KEY = "EL_ADMIN";
 
-	public static final String CAPTCHA_KEY = "mate.captcha.";
+	public static final String CAPTCHA_KEY = "eladmin.captcha.";
 
-	public static final String SMS_CODE_KEY = "mate.sms.code.";
+	public static final String SMS_CODE_KEY = "eladmin.sms.code.";
 
 	public static final String CAPTCHA_HEADER_KEY = "key";
 
@@ -128,31 +128,31 @@ public class Oauth2Constant {
 	/**
 	 * 字段描述开始：用户ID
 	 */
-	public static final String MATE_USER_ID = "userId";
+	public static final String EL_ADMIN_USER_ID = "userId";
 
 	/**
 	 * 用户名
 	 */
-	public static final String MATE_USER_NAME = "userName";
+	public static final String EL_ADMIN_USER_NAME = "userName";
 
 	/**
 	 * 用户头像
 	 */
-	public static final String MATE_AVATAR = "avatar";
+	public static final String EL_ADMIN_AVATAR = "avatar";
 
 	/**
 	 * 用户权限ID
 	 */
-	public static final String MATE_ROLE_ID = "roleId";
+	public static final String EL_ADMIN_ROLE_ID = "roleId";
 
 	/**
 	 * 用户类型
 	 */
-	public static final String MATE_TYPE = "type";
+	public static final String EL_ADMIN_TYPE = "type";
 
 	/**
 	 * 租户ID
 	 */
-	public static final String MATE_TENANT_ID = "tenantId";
+	public static final String EL_ADMIN_TENANT_ID = "tenantId";
 
 }

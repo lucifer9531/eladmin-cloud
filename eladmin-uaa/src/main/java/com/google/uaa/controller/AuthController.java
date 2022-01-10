@@ -30,13 +30,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * 认证控制类
  * @author iris
  */
 @Slf4j
@@ -47,7 +47,7 @@ import java.util.stream.Collectors;
 public class AuthController {
 
     @Qualifier("consumerTokenServices")
-    private final ConsumerTokenServices customerTokenServices;
+     private final ConsumerTokenServices consumerTokenServices;
 
     private final ValidateService validateService;
 
@@ -62,11 +62,12 @@ public class AuthController {
     private final RedisService redisService;
 
     @GetMapping("/get/user")
-    @ApiOperation(value = "用户信息", notes = "用户信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "El-Admin-Auth", required = true, value = "授权类型", paramType = "header")
     })
+    @ApiOperation(value = "用户信息", notes = "用户信息")
     public Result<?> getUser(HttpServletRequest request) {
+
         LoginUser loginUser = SecurityUtil.getUsername(request);
         UserInfo userInfo = null;
         /**
@@ -74,10 +75,11 @@ public class AuthController {
          * type 1:用户名和密码登录　2：手机号码登录
          */
         if (loginUser.getType() == LoginType.MOBILE.getType()) {
-           userInfo = sysUserProvider.getUserByMobile(loginUser.getAccount()).getData();
+            userInfo = sysUserProvider.getUserByMobile(loginUser.getAccount()).getData();
         } else {
             userInfo = sysUserProvider.getUserByUserName(loginUser.getAccount()).getData();
         }
+
         Map<String, Object> data = new HashMap<>(7);
         data.put("username", loginUser.getAccount());
         data.put("avatar", userInfo.getSysUser().getAvatar());
@@ -110,7 +112,7 @@ public class AuthController {
     })
     public Result<?> logout(HttpServletRequest request) {
         if (StringUtil.isNotBlank(SecurityUtil.getHeaderToken(request))) {
-            customerTokenServices.revokeToken(SecurityUtil.getToken(request));
+            consumerTokenServices.revokeToken(SecurityUtil.getToken(request));
         }
         return Result.success("操作成功");
     }
