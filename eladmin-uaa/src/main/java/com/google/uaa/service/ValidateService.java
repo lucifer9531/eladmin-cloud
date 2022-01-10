@@ -13,4 +13,11 @@ public interface ValidateService {
      * @return
      */
     Result<?> getCode();
+
+    /**
+     * 获取手机验证码
+     * @param mobile
+     * @return
+     */
+    Result<?> getSmsCode(String mobile);
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * redis配置
  *
- * @author pangu
+ * @author iris
  */
 @Getter
 @Setter

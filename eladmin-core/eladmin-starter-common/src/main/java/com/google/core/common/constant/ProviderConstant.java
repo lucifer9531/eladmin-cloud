@@ -2,8 +2,7 @@ package com.google.core.common.constant;
 
 /**
  * 用户常量
- *
- * @author pangu
+ * @author iris
  */
 public interface ProviderConstant {
     /**

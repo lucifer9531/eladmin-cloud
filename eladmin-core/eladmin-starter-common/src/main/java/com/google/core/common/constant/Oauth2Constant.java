@@ -86,7 +86,7 @@ public class Oauth2Constant {
 
 	public static final int LOGIN_MOBILE_TYPE = 2;
 
-	public static final String HEADER_TOKEN = "Mate-Auth";
+	public static final String HEADER_TOKEN = "El-Admin-Auth";
 
 	/**
 	 * 自定义client表名

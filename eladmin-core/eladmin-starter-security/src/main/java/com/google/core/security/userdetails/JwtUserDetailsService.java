@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 /**
  * 用户详细扩展
- * @author pangu
+ * @author iris
  */
 public interface JwtUserDetailsService extends UserDetailsService {
 

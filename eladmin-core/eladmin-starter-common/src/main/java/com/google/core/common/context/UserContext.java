@@ -5,7 +5,7 @@ import com.google.core.common.entity.LoginUser;
 /**
  * 用户上下文
  *
- * @author pangu
+ * @author iris
  */
 public class UserContext {
 

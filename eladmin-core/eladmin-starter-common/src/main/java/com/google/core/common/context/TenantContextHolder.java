@@ -6,7 +6,7 @@ import lombok.experimental.UtilityClass;
 /**
  * 多租户Holder
  *
- * @author pangu
+ * @author iris
  * @since 2020-9-8
  */
 @UtilityClass

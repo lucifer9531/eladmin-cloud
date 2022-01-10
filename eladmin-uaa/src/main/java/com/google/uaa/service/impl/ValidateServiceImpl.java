@@ -38,4 +38,11 @@ public class ValidateServiceImpl implements ValidateService {
         }};
         return Result.data(data);
     }
+
+    @Override
+    public Result<?> getSmsCode(String mobile) {
+        String code = "1188";
+        redisService.set(Oauth2Constant.SMS_CODE_KEY + mobile, code, Duration.ofMinutes(5));
+        return Result.success("发送成功");
+    }
 }

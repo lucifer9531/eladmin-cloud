@@ -133,7 +133,7 @@ public class SwaggerConfiguration implements WebMvcConfigurer {
     private List<ApiKey> securitySchemes() {
         List<ApiKey> apiKeyList = new ArrayList<>();
         apiKeyList.add(new ApiKey("Authorization", "Authorization", "header"));
-        apiKeyList.add(new ApiKey("Mate-Auth", "Mate-Auth", "header"));
+        apiKeyList.add(new ApiKey("El-Admin-Auth", "El-Admin-Auth", "header"));
         return apiKeyList;
     }
 

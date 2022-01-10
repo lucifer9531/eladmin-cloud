@@ -42,7 +42,7 @@ public class SecurityUtil {
 	/**
 	 * 从Token解析获取Claims对象
 	 *
-	 * @param token Mate-Auth获取的token
+	 * @param token El-Admin-Auth获取的token
 	 * @return Claims
 	 */
 	public static Claims getClaims(String token) {

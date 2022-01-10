@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 
 /**
  * 统一异常处理配置
- * @author xuzhanfu
+ * @author iris
  */
 @Configuration
 @ComponentScan(value="com.google.core.web.handler")
