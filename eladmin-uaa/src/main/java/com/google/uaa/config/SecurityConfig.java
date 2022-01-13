@@ -6,8 +6,8 @@ import com.google.core.security.handler.JwtAuthenticationSuccessHandler;
 import com.google.uaa.service.impl.UserDetailsServiceImpl;
 import com.google.uaa.sms.SmsCodeAuthenticationSecurityConfig;
 import com.google.uaa.social.SocialAuthenticationSecurityConfig;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -30,10 +30,10 @@ import javax.annotation.Resource;
  **/
 @Order(3)
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private IgnoreUrlPropsConfiguration ignoreUrlPropsConfig;
+	private final IgnoreUrlPropsConfiguration ignoreUrlPropsConfig;
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
