@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Accessors(chain = true)
 @TableName("mate_sys_user")
 @ApiModel(value = "SysUser对象", description = "系统用户表")
-public class SysUser extends BaseEntity {
+public class User extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

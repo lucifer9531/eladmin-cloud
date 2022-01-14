@@ -3,7 +3,7 @@ package com.google.system.feign;
 import com.google.core.common.api.Result;
 import com.google.core.common.constant.ProviderConstant;
 import com.google.core.feign.constant.FeignConstant;
-import com.google.system.domain.SysUser;
+import com.google.system.domain.User;
 import com.google.system.dto.UserInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +21,7 @@ public interface ISysUserProvider {
      * @return Result
      */
     @GetMapping(ProviderConstant.PROVIDER_USER_ID)
-    Result<SysUser> getUserById(@RequestParam("id") Long id);
+    Result<User> getUserById(@RequestParam("id") Long id);
 
     /**
      * 根据userName查询用户信息

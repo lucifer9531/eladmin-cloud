@@ -5,14 +5,13 @@ import com.google.core.common.constant.Oauth2Constant;
 import com.google.core.common.exception.TokenException;
 import com.google.core.security.userdetails.JwtUser;
 import com.google.core.security.userdetails.JwtUserDetailsService;
-import com.google.system.domain.SysUser;
+import com.google.system.domain.User;
 import com.google.system.dto.UserInfo;
 import com.google.system.feign.ISysUserProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -78,7 +77,7 @@ public class UserDetailsServiceImpl implements JwtUserDetailsService {
 			log.info("该用户：{} 已被停用!", userInfo.getUserName());
 			throw new TokenException("对不起，您的账号：" + userInfo.getUserName() + " 已停用");
 		}
-		SysUser user = userInfo.getSysUser();
+		User user = userInfo.getSysUser();
 		log.info("用户名：{}", userInfo.getSysUser().getAccount());
 		Collection<? extends GrantedAuthority> authorities
 				= AuthorityUtils.createAuthorityList(Convert.toStrArray(userInfo.getRoleIds()));

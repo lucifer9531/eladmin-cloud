@@ -1,6 +1,6 @@
 package com.google.system.dto;
 
-import com.google.system.domain.SysUser;
+import com.google.system.domain.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -21,7 +21,7 @@ public class UserInfo implements Serializable {
      * 系统用户信息
      */
     @ApiModelProperty("系统用户信息")
-    private SysUser sysUser;
+    private User sysUser;
 
     /**
      * 系统权限标识组
