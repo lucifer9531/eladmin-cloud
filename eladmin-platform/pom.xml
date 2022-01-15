@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>eladmin-system-api</module>
-        <module>eladmin-syatem</module>
+        <module>eladmin-system</module>
     </modules>
 
     <properties>

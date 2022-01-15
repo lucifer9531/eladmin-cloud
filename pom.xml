@@ -12,7 +12,6 @@
         <module>eladmin-core</module>
         <module>eladmin-uaa</module>
         <module>eladmin-platform</module>
-        <module>eladmin-gateway</module>
     </modules>
 
     <properties>
