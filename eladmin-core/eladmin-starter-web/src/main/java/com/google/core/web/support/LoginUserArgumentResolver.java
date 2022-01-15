@@ -37,7 +37,7 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
         HttpServletRequest request = nativeWebRequest.getNativeRequest(HttpServletRequest.class);
         LoginUser loginUser = SecurityUtil.getUsername(request);
         /**
-         * 根据value状态获取更多用户信息，待实现
+         * TODO 根据value状态获取更多用户信息，待实现
          */
         return loginUser;
     }

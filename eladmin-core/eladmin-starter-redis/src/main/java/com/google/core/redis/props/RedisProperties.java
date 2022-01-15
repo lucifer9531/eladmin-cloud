@@ -11,8 +11,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @Getter
 @Setter
-@ConfigurationProperties(ElAdminRedisProperties.PREFIX)
-public class ElAdminRedisProperties {
+@ConfigurationProperties(RedisProperties.PREFIX)
+public class RedisProperties {
 	/**
 	 * 前缀
 	 */

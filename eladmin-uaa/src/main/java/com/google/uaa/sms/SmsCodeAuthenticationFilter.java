@@ -1,7 +1,7 @@
 package com.google.uaa.sms;
 
 import com.google.core.common.constant.Oauth2Constant;
-import com.google.core.common.enums.MethodType;
+import com.google.core.common.enums.MethodTypeEnum;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -32,7 +32,7 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-		if (postOnly && MethodType.POST.name().equals(request.getMethod())) {
+		if (postOnly && MethodTypeEnum.POST.name().equals(request.getMethod())) {
 			throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
 		}
 

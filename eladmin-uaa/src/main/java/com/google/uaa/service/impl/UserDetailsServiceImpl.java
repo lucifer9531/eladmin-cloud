@@ -7,7 +7,7 @@ import com.google.core.security.userdetails.JwtUser;
 import com.google.core.security.userdetails.JwtUserDetailsService;
 import com.google.system.domain.User;
 import com.google.system.dto.UserInfo;
-import com.google.system.feign.ISysUserProvider;
+import com.google.system.feign.UserProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -31,7 +31,7 @@ public class UserDetailsServiceImpl implements JwtUserDetailsService {
 	public static final String DISABLE = "1";
 
 	@Resource
-	private ISysUserProvider sysUserProvider;
+	private UserProvider sysUserProvider;
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

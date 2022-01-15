@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.annotation.AnnotatedElementUtils;
@@ -29,6 +30,7 @@ public class FeignClientEndpoint implements SmartInitializingSingleton {
         this.clientList = new ArrayList<>();
     }
 
+    @ReadOperation
     public List<FeignClientInfo> invoke() {
         return clientList;
     }

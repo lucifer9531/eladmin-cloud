@@ -17,7 +17,7 @@ import java.util.Properties;
  * @link https://blog.csdn.net/zxl8899/article/details/106382719/
  */
 @AllArgsConstructor
-public class YamlPropertySourceFactory implements PropertySourceFactory {
+public class YmlPropertySourceFactory implements PropertySourceFactory {
 
 	@Override
 	public PropertySource<?> createPropertySource(String name, EncodedResource resource) throws IOException {

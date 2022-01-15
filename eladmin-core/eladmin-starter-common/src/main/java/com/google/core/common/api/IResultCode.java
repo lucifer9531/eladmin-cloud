@@ -1,6 +1,7 @@
 package com.google.core.common.api;
 
 /**
+ * 返回码接口
  * @author iris
  */
 public interface IResultCode {

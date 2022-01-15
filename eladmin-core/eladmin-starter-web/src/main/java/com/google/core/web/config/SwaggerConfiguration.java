@@ -2,8 +2,8 @@ package com.google.core.web.config;
 
 import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;
 import com.google.core.common.constant.ElAdminConstant;
-import com.google.core.common.factory.YamlPropertySourceFactory;
-import com.google.core.web.props.ElAdminSwaggerProperties;
+import com.google.core.common.factory.YmlPropertySourceFactory;
+import com.google.core.web.props.SwaggerProperties;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeansException;
@@ -52,11 +52,11 @@ import java.util.stream.Collectors;
 @EnableSwagger2WebMvc
 @AllArgsConstructor
 @Import(BeanValidatorPluginsConfiguration.class)
-@EnableConfigurationProperties(ElAdminSwaggerProperties.class)
-@PropertySource(factory = YamlPropertySourceFactory.class, value = "classpath:eladmin-swagger.yml")
+@EnableConfigurationProperties(SwaggerProperties.class)
+@PropertySource(factory = YmlPropertySourceFactory.class, value = "classpath:eladmin-swagger.yml")
 public class SwaggerConfiguration implements WebMvcConfigurer {
 
-    private final ElAdminSwaggerProperties swaggerProperties;
+    private final SwaggerProperties swaggerProperties;
 
     private final OpenApiExtensionResolver openApiExtensionResolver;
 

@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
  * @author iris
  */
 @UtilityClass
-public class ElAdminAuthUser {
+public class AuthUser {
 
 	/**
 	 * 获取Authentication

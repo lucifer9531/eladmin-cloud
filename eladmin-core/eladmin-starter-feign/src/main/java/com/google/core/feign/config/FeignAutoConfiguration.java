@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Import;
 @ConditionalOnClass(Feign.class)
 @Import(ElAdminFeignClientsRegistrar.class)
 @AutoConfigureAfter(EnableFeignClients.class)
-public class ElAdminFeignAutoConfiguration {
+public class FeignAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean

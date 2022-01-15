@@ -1,6 +1,6 @@
 package org.springframework.cloud.openfeign;
 
-import com.google.core.feign.config.ElAdminFeignAutoConfiguration;
+import com.google.core.feign.config.FeignAutoConfiguration;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
@@ -114,7 +114,7 @@ public class ElAdminFeignClientsRegistrar implements ImportBeanDefinitionRegistr
      * @return the factory class
      */
     private Class<?> getSpringFactoriesLoaderFactoryClass() {
-        return ElAdminFeignAutoConfiguration.class;
+        return FeignAutoConfiguration.class;
     }
 
     private void validate(Map<String, Object> attributes) {

@@ -20,6 +20,7 @@
         <module>eladmin-starter-redis</module>
         <module>eladmin-starter-auth</module>
         <module>eladmin-starter-security</module>
+        <module>eladmin-starter-mybatis</module>
     </modules>
 
     <properties>

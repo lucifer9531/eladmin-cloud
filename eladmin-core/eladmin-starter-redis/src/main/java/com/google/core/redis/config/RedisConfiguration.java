@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.core.redis.core.RedisService;
-import com.google.core.redis.props.ElAdminRedisProperties;
+import com.google.core.redis.props.RedisProperties;
 import com.google.core.redis.utils.RedisLockUtil;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -23,8 +23,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @author iris
  */
 @Configuration
-@EnableConfigurationProperties(ElAdminRedisProperties.class)
-@ConditionalOnProperty(value = ElAdminRedisProperties.PREFIX + ".enabled", havingValue = "true", matchIfMissing = true)
+@EnableConfigurationProperties(RedisProperties.class)
+@ConditionalOnProperty(value = RedisProperties.PREFIX + ".enabled", havingValue = "true", matchIfMissing = true)
 public class RedisConfiguration {
 
     @Bean

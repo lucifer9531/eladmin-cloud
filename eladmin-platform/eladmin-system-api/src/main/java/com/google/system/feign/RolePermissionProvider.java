@@ -13,7 +13,7 @@ import java.util.List;
  * @author iris
  */
 @FeignClient(value = FeignConstant.EL_ADMIN_CLOUD_SYSTEM)
-public interface ISysRolePermissionProvider {
+public interface RolePermissionProvider {
 
     /**
      * 通过roleId获取权限列表

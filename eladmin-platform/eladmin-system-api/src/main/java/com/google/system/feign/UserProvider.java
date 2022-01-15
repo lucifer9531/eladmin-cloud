@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author iris
  */
 @FeignClient(value = FeignConstant.EL_ADMIN_CLOUD_SYSTEM)
-public interface ISysUserProvider {
+public interface UserProvider {
     /**
      * 根据id查询用户信息
      *

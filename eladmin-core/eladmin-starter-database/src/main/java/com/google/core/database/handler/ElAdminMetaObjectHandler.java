@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  * 自动填充时间字段
  * @author iris
  */
-public class MateMetaObjectHandler implements MetaObjectHandler {
+public class ElAdminMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         this.strictInsertFill(metaObject, "createTime", LocalDateTime.class, LocalDateTime.now());

@@ -26,7 +26,7 @@ public class UserController {
 
     private final UserService userService;
 
-    private final PasswordEncoder passwordEncoder;
+    // private final PasswordEncoder passwordEncoder;
 
     @PreAuth
     @GetMapping("/page")

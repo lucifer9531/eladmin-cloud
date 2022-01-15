@@ -2,7 +2,7 @@ package com.google.core.database.config;
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
-import com.google.core.common.factory.YamlPropertySourceFactory;
+import com.google.core.common.factory.YmlPropertySourceFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -11,16 +11,13 @@ import org.springframework.context.annotation.PropertySource;
 
 /**
  * Druid配置
- *
  * @author iris
  */
 @Configuration
-@PropertySource(factory = YamlPropertySourceFactory.class, value = "classpath:eladmin-druid.yml")
+@PropertySource(factory = YmlPropertySourceFactory.class, value = "classpath:eladmin-druid.yml")
 public class DruidConfiguration {
     /**
      * 注册一个StatViewServlet
-     *
-     * @return
      */
     @Bean
     public ServletRegistrationBean DruidStatViewServle() {
@@ -47,8 +44,6 @@ public class DruidConfiguration {
 
     /**
      * 注册一个：filterRegistrationBean
-     *
-     * @return
      */
     @Bean
     public FilterRegistrationBean druidStatFilter() {

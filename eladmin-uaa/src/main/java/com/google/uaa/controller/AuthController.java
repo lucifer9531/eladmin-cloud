@@ -8,8 +8,8 @@ import com.google.core.common.utils.StringPool;
 import com.google.core.common.utils.StringUtil;
 import com.google.core.redis.core.RedisService;
 import com.google.system.dto.UserInfo;
-import com.google.system.feign.ISysRolePermissionProvider;
-import com.google.system.feign.ISysUserProvider;
+import com.google.system.feign.RolePermissionProvider;
+import com.google.system.feign.UserProvider;
 import com.google.uaa.config.SocialConfig;
 import com.google.uaa.enums.LoginType;
 import com.google.uaa.service.ValidateService;
@@ -51,9 +51,9 @@ public class AuthController {
 
     private final ValidateService validateService;
 
-    private final ISysUserProvider sysUserProvider;
+    private final UserProvider userProvider;
 
-    private final ISysRolePermissionProvider sysRolePermissionProvider;
+    private final RolePermissionProvider rolePermissionProvider;
 
     private final AuthRequestFactory factory;
 
@@ -75,9 +75,9 @@ public class AuthController {
          * type 1:用户名和密码登录　2：手机号码登录
          */
         if (loginUser.getType() == LoginType.MOBILE.getType()) {
-            userInfo = sysUserProvider.getUserByMobile(loginUser.getAccount()).getData();
+            userInfo = userProvider.getUserByMobile(loginUser.getAccount()).getData();
         } else {
-            userInfo = sysUserProvider.getUserByUserName(loginUser.getAccount()).getData();
+            userInfo = userProvider.getUserByUserName(loginUser.getAccount()).getData();
         }
 
         Map<String, Object> data = new HashMap<>(7);
@@ -88,7 +88,7 @@ public class AuthController {
         data.put("tenantId", userInfo.getSysUser().getTenantId());
         data.put("realName", userInfo.getSysUser().getRealName());
         data.put("nickName", userInfo.getSysUser().getName());
-        List<String> stringList = sysRolePermissionProvider.getMenuIdByRoleId(String.valueOf(userInfo.getSysUser().getRoleId()));
+        List<String> stringList = rolePermissionProvider.getMenuIdByRoleId(String.valueOf(userInfo.getSysUser().getRoleId()));
         data.put("permissions", stringList);
         // 存入redis,以用于eladmin-starter-auth的PreAuthAspect查询权限使用
         redisService.set(Oauth2Constant.EL_ADMIN_PERMISSION_PREFIX + loginUser.getAccount()

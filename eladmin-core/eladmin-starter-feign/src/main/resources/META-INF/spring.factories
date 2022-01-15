@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.google.core.feign.config.ElAdminFeignAutoConfiguration
+  com.google.core.feign.config.FeignAutoConfiguration
 
 

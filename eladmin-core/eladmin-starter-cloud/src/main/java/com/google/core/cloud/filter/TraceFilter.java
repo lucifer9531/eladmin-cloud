@@ -2,6 +2,7 @@ package com.google.core.cloud.filter;
 
 import com.google.core.cloud.props.ElAdminRequestProperties;
 import com.google.core.common.utils.TraceUtil;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -16,7 +17,6 @@ import java.io.IOException;
 
 /**
  * 日志链路追踪过滤器
- *
  * @author iris
  */
 @ConditionalOnClass(Filter.class)
@@ -26,12 +26,12 @@ public class TraceFilter extends OncePerRequestFilter {
     private ElAdminRequestProperties elAdminRequestProperties;
 
     @Override
-    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+    protected boolean shouldNotFilter(@NotNull HttpServletRequest request) throws ServletException {
         return !elAdminRequestProperties.getTrace();
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+    protected void doFilterInternal(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         try {
             String traceId = TraceUtil.getTraceId(request);

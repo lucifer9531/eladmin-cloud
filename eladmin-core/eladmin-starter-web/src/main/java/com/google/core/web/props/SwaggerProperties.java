@@ -14,7 +14,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 @Setter
 @RefreshScope
 @ConfigurationProperties(prefix = "eladmin.swagger")
-public class ElAdminSwaggerProperties {
+public class SwaggerProperties {
 
 	/**
 	 * 是否启用Swagger

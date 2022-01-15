@@ -2,7 +2,7 @@ package com.google.uaa.social;
 
 import com.alibaba.fastjson.JSON;
 import com.google.core.common.constant.Oauth2Constant;
-import com.google.core.common.enums.MethodType;
+import com.google.core.common.enums.MethodTypeEnum;
 import com.xkcoding.justauth.AuthRequestFactory;
 import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.enums.AuthResponseStatus;
@@ -47,7 +47,7 @@ public class SocialAuthenticationFilter extends AbstractAuthenticationProcessing
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-		if (postOnly && !MethodType.POST.name().equals(request.getMethod())) {
+		if (postOnly && !MethodTypeEnum.POST.name().equals(request.getMethod())) {
 			throw new AuthenticationServiceException("Authentication method not supported: " + request.getMethod());
 		}
 		SocialAuthenticationToken token;

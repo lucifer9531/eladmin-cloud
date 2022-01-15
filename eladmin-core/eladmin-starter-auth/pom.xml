@@ -21,11 +21,13 @@
             <groupId>com.google</groupId>
             <artifactId>eladmin-starter-common</artifactId>
             <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.google</groupId>
             <artifactId>eladmin-starter-redis</artifactId>
             <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>

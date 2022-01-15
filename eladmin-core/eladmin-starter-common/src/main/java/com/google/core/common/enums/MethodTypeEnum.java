@@ -9,7 +9,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum MethodType {
+public enum MethodTypeEnum {
 
 	/**
 	 * 方法类型

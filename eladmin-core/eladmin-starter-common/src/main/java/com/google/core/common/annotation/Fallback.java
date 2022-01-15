@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.*;
 
 /**
+ * Feign Fallback注解
  * @author iris
  */
 @Target(ElementType.TYPE)
