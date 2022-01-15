@@ -21,6 +21,7 @@
         <module>eladmin-starter-auth</module>
         <module>eladmin-starter-security</module>
         <module>eladmin-starter-mybatis</module>
+        <module>eladmin-starter-rule</module>
     </modules>
 
     <properties>
